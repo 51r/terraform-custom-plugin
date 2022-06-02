@@ -8,7 +8,7 @@ Below is the guide how to compile the plugin and add it to your own project.
 
 [Go](https://go.dev/doc/install) v1.18.1 (to build the provider plugin)
 
-[Terraform](https://www.terraform.io/downloads) (to execute the plugin)
+[Terraform](https://www.terraform.io/downloads) (to use the plugin)
 
 # How to compile the plugin and add it to your Terraform Configuration
 
@@ -31,7 +31,7 @@ Below is the guide how to compile the plugin and add it to your own project.
  
 I will describe in details which local directories Terraform includes and how:
 
-By default it includes the following directories in OS X:
+**By default it includes the following directories in OS X:**
 
 `$HOME/.terraform.d/plugins, `
 
@@ -43,7 +43,7 @@ and if you want to keep the plugins in the current working directory, like in my
 
 `terraform.d/plugins`
 
-There are 2 default layouts of plugins stored locally:
+ **There are 2 default layouts of plugins stored locally:**
 * **Packed layout**: HOSTNAME/NAMESPACE/TYPE/terraform-provider-TYPE_VERSION_TARGET.zip is the distribution zip file obtained from the provider’s origin registry.
 * **Unpacked layout**: HOSTNAME/NAMESPACE/TYPE/VERSION/TARGET is a directory containing the result of extracting the provider’s distribution zip file.
 
@@ -57,9 +57,6 @@ The type is usually the provider’s preferred local name.
 **TARGET**: Target platform, it can be `darwin_amd64`, `linux_arm`, `windows_amd64`, etc.
 
 
-If you wish to use custom path, you will have to manually specify it in [required_providers](https://www.terraform.io/language/providers/requirements#local-names) block.
-
-
 This is the path used in my project: registry.terraform.io/hashicorp/extip/1.0.0/darwin_arm64/
 ```
 Hostname: registry.terraform.io
@@ -68,6 +65,11 @@ Type: extip
 Version: 1.0.0
 Target: darwin_arm64 (OS X M1 arch)
 ```
+
+I have used `registry.terraform.io/hashicorp`, so I don't need to specify the path in `required_providers` block. 
+
+**If you wish to use custom path, you will have to manually specify it in [required_providers](https://www.terraform.io/language/providers/requirements#local-names) block.**
+
 # How to use the repo
 **Keep in mind that the compiled plugin is for M1 architecture, it won't work on different platforms.**
 
@@ -105,4 +107,3 @@ This means that the extip plugin was loaded from the local path.
 ```
 terraform apply
 ```
-
