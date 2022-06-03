@@ -26,7 +26,7 @@ Below is the guide how to compile the plugin and add it to your own project.
  3. Copy your compiled plugin to your plugin directory. The shown directory is for "darwin_arm64(M1 OS X) architecture.
 
  ```
- cp go/bin/terraform-provider-extip *path/to/your/TF/working/directory*/terraform.d/plugins/registry.terraform.io/hashicorp/extip/1.0.0/darwin_arm64/
+ cp go/bin/terraform-provider-extip *path/to/your/TF/working/directory*/terraform.d/plugins/local.providers/peter/extip/1.0.0/darwin_arm64/
  ```
  
 I will describe in details which local directories Terraform includes and how:
@@ -57,18 +57,26 @@ The type is usually the provider’s preferred local name.
 * **TARGET**: Target platform, it can be `darwin_amd64`, `linux_arm`, `windows_amd64`, etc.
 
 
-This is the local source path used in my project: registry.terraform.io/hashicorp/extip/1.0.0/darwin_arm64/
+This is the local source path used in my project: local.providers/peter/extip/1.0.0/darwin_arm64
 ```
-Hostname: registry.terraform.io
-Namespace: hashicorp
+Hostname: local.providers
+Namespace: peter
 Type: extip
 Version: 1.0.0
 Target: darwin_arm64 (OS X M1 arch)
 ```
 
-I have used `registry.terraform.io/hashicorp`, so I don't need to specify the path in `required_providers` block. 
+You will need to specify it in `required_providers` block:
 
-**If you wish to use custom path, you will have to manually specify it in [required_providers](https://www.terraform.io/language/providers/requirements#local-names) block.**
+```
+terraform {
+  required_providers {
+    extip = {
+      source = "local.providers/peter/extip"
+    }
+  }
+}
+```
 
 # How to use the repo
 **Keep in mind that the compiled plugin is for M1 architecture, it won't work on different platforms.**
