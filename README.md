@@ -57,7 +57,7 @@ The type is usually the provider’s preferred local name.
 **TARGET**: Target platform, it can be `darwin_amd64`, `linux_arm`, `windows_amd64`, etc.
 
 
-This is the path used in my project: registry.terraform.io/hashicorp/extip/1.0.0/darwin_arm64/
+This is the local path used in my project: registry.terraform.io/hashicorp/extip/1.0.0/darwin_arm64/
 ```
 Hostname: registry.terraform.io
 Namespace: hashicorp
