@@ -53,8 +53,8 @@ In our case we have to use unpacked layout:
 * **Namespace**: An organizational namespace within the specified registry. For the public Terraform Registry and for Terraform Cloud’s private registry, this represents the organization that publishes the provider. 
 * **Type**: A short name for the platform or system the provider manages. Must be unique within a particular namespace on a particular registry host.
 The type is usually the provider’s preferred local name.
-**VERSION**: It includes version, which can be 1.0.0.
-**TARGET**: Target platform, it can be `darwin_amd64`, `linux_arm`, `windows_amd64`, etc.
+* **VERSION**: It includes version, which can be 1.0.0.
+* **TARGET**: Target platform, it can be `darwin_amd64`, `linux_arm`, `windows_amd64`, etc.
 
 
 This is the local source path used in my project: registry.terraform.io/hashicorp/extip/1.0.0/darwin_arm64/
