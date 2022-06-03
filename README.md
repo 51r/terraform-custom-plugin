@@ -26,7 +26,7 @@ Below is the guide how to compile the plugin and add it to your own project.
  3. Copy your compiled plugin to your plugin directory. The shown directory is for "darwin_arm64(M1 OS X) architecture.
 
  ```
- cp go/bin/terraform-provider-extip *path/to/your/TF/working/directory*/terraform.d/plugins/local.providers/peter/extip/1.0.0/darwin_arm64/
+ cp ~/go/bin/terraform-provider-extip *path/to/your/TF/working/directory*/terraform.d/plugins/local.providers/peter/extip/1.0.0/darwin_arm64/
  ```
  
 I will describe in details which local directories Terraform includes and how:
