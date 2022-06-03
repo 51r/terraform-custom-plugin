@@ -21,7 +21,7 @@ Below is the guide how to compile the plugin and add it to your own project.
  ```
  cd terraform-provider-extip && make build
  ```
- By default Go is saving the compiled binary to ~/go/bin/terraform-provider-extip 
+ By default Go is saving the compiled binary to `~/go/bin/terraform-provider-extip` 
  
  3. Copy your compiled plugin to your plugin directory. The shown directory is for "darwin_arm64(M1 OS X) architecture.
 
